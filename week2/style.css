@@ -1,13 +1,17 @@
 :root {
-  --dark: #14213d;
-  --accent: #d9692b;
+  --forest: #1f4d3f;  
+  --ink: #16201c;   
+  --cream: #faf7f0;  
+  --sage: #e8efe6;    
+  --gold: #c8a24a;     
 }
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
-  color: #1a1a1a;
+  color: var(--ink);
+  background: var(--cream);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -18,15 +22,22 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 16px 24px;
-  background: var(--dark);
+  background: var(--forest);
+  border-bottom: 4px solid var(--gold);
 }
-header a { color: white; }
+header a {
+  color: white;
+  text-decoration: none;
+}
+header > a { font-weight: 700; font-size: 1.1rem; }
+header a:hover { text-decoration: underline; }
 nav { display: flex; gap: 24px; }
 
 main {
   padding: 24px;
   flex: 1;
 }
+h1 { color: var(--forest); }
 
 .cards {
   display: grid;
@@ -36,14 +47,18 @@ main {
 article {
   padding: 24px;
   border-radius: 12px;
-  background: #f5f3ee;
+  background: var(--sage);
+  border-left: 6px solid var(--gold);
 }
+article h2 { margin-top: 0; color: var(--forest); }
+article p { margin-bottom: 0; }
 
 footer {
   padding: 24px;
-  background: var(--dark);
+  background: var(--ink);
   color: white;
 }
+footer p { margin: 0; }
 
 form {
   display: grid;
@@ -51,15 +66,30 @@ form {
   max-width: 400px;
 }
 label { font-weight: 600; }
-input { padding: 10px; font-size: 1rem; }
+input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #8a9a90;
+  border-radius: 8px;
+  background: white;
+}
 button {
   padding: 12px;
   font-size: 1rem;
-  background: var(--dark);
+  font-weight: 600;
+  background: var(--forest);
   color: white;
   border: 0;
   border-radius: 8px;
   cursor: pointer;
+}
+button:hover { background: var(--ink); }
+
+a:focus-visible,
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
 }
 
 @media (min-width: 768px) {
