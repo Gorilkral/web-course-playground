@@ -1,4 +1,3 @@
-// ---------- 1. Dynamic list (index.html) ----------
 const events = [
   { id: 1, title: "Coding Night", date: "Oct 20", place: "Lab 3" },
   { id: 2, title: "Web Workshop", date: "Oct 27", place: "Room B12" },
@@ -30,7 +29,6 @@ if (list) {
   renderEvents();
 }
 
-// ---------- 2. Form validation (signup.html) ----------
 const form = document.querySelector("#signup-form");
 
 if (form) {

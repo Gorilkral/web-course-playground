@@ -1,18 +1,10 @@
-// ---------- 1. Dynamic list (index.html) ----------
-const events = [
-  { id: 1, title: "Coding Night", date: "Oct 20", place: "Lab 3" },
-  { id: 2, title: "Web Workshop", date: "Oct 27", place: "Room B12" },
-  { id: 3, title: "Career Talk", date: "Nov 3", place: "Main Hall" },
-  { id: 4, title: "Hackathon", date: "Nov 10", place: "Lab 1" },
-  { id: 5, title: "Game Night", date: "Nov 17", place: "Cafeteria" },
-  { id: 6, title: "Demo Day", date: "Nov 24", place: "Auditorium" }
-];
-
 const list = document.querySelector("#event-list");
+const statusText = document.querySelector("#status");
+let events = [];
 
-function renderEvents() {
+function renderEvents(items) {
   list.innerHTML = "";
-  for (const item of events) {
+  for (const item of items) {
     const article = document.createElement("article");
 
     const h2 = document.createElement("h2");
@@ -26,11 +18,33 @@ function renderEvents() {
   }
 }
 
-if (list) {
-  renderEvents();
+async function loadEvents() {
+  statusText.textContent = "Loading events...";
+  try {
+    const response = await fetch("data.json");
+    if (!response.ok) throw new Error("HTTP " + response.status);
+
+    events = await response.json();
+
+    if (events.length === 0) {
+      renderEvents(events);
+      statusText.textContent = "No events found.";
+      return;
+    }
+
+    statusText.textContent = "";
+    renderEvents(events);
+  } catch (error) {
+    list.innerHTML = "";
+    statusText.textContent = "Could not load events. Try again.";
+    console.error(error);
+  }
 }
 
-// ---------- 2. Form validation (signup.html) ----------
+if (list) {
+  loadEvents();
+}
+
 const form = document.querySelector("#signup-form");
 
 if (form) {
