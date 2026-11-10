@@ -1,22 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Tasks</title>
-    <style>
-        .done { text-decoration: line-through; color: gray; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Club Events</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>My Tasks</h1>
-    <form id="task-form"> 
-        <label for="task-input">New task</label> 
-        <input id="task-input">
-        <button type="submit">Add</button> 
-    </form> 
-    <p id="error"></p>
-    <ul id="task-list"></ul>
-    <script src="app.js"></script>
+  <header>
+    <a href="index.html">Club Events</a>
+    <nav>
+      <a href="index.html">Events</a>
+      <a href="index.html">About</a>
+      <a href="signup.html">Join</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Upcoming events</h1>
+    <section class="cards">
+      <article>
+        <h2>Coding Night</h2>
+        <p>Oct 20 · Lab 3</p>
+      </article>
+      <article>
+        <h2>Web Workshop</h2>
+        <p>Oct 27 · Room B12</p>
+      </article>
+      <article>
+        <h2>Career Talk</h2>
+        <p>Nov 3 · Main Hall</p>
+      </article>
+      <article>
+        <h2>Hackathon</h2>
+        <p>Nov 10 · Lab 1</p>
+      </article>
+      <article>
+        <h2>Game Night</h2>
+        <p>Nov 17 · Cafeteria</p>
+      </article>
+      <article>
+        <h2>Demo Day</h2>
+        <p>Nov 24 · Auditorium</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 MIS 457 Club</p>
+  </footer>
 </body>
 </html>
