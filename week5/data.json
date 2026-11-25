@@ -1,0 +1,8 @@
+[
+  { "id": 1, "title": "Coding Night", "date": "Oct 20", "place": "Lab 3" },
+  { "id": 2, "title": "Web Workshop", "date": "Oct 27", "place": "Room B12" },
+  { "id": 3, "title": "Career Talk", "date": "Nov 3", "place": "Main Hall" },
+  { "id": 4, "title": "Hackathon", "date": "Nov 10", "place": "Lab 1" },
+  { "id": 5, "title": "Game Night", "date": "Nov 17", "place": "Cafeteria" },
+  { "id": 6, "title": "Demo Day", "date": "Nov 24", "place": "Auditorium" }
+]
