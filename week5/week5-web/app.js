@@ -1,5 +1,6 @@
 const list = document.querySelector("#event-list");
 const statusText = document.querySelector("#status");
+const API_URL = "http://localhost:3000/api/events";
 let events = [];
 
 function renderEvents(items) {
@@ -21,7 +22,7 @@ function renderEvents(items) {
 async function loadEvents() {
   statusText.textContent = "Loading events...";
   try {
-    const response = await fetch("data.json");
+    const response = await fetch(API_URL);
     if (!response.ok) throw new Error("HTTP " + response.status);
 
     events = await response.json();
